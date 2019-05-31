@@ -1,0 +1,19 @@
+<div class="p-2 w-100">
+    <div  *ngFor="let item of notes" class="w-100 row" >
+        <p class="col-9"
+            style="cursor:pointer"
+            (click)="edit(item)">
+                {{item.title}}
+        </p>
+        <p class="text-right col-3">
+            <i class="fa fa-edit mr-1"
+                (click)="edit(item)" 
+                style ="cursor:pointer">
+            </i> 
+            <i class="fa fa-trash" 
+                (click)="delete(item.id)" 
+                style ="cursor:pointer">
+            </i>
+        </p>
+    </div>
+</div>

@@ -1,0 +1,37 @@
+<form>
+  <div class="form-group">
+    <label for="noteName">Note Title</label>
+    <input 
+      #noteTitle="ngModel"
+      type="text"
+      name="noteTitle"
+      id="noteTitle"
+      placeholder="Enter Note Title"
+      [ngModel]="model.title"
+      (ngModelChange)="model.title = $event"
+      class="form-control"
+      required>
+  </div>
+
+  <div class="form-group h-100">
+    <label for="noteText">Note Text</label>
+    <textarea 
+      #noteText="ngModel"
+      type="textarea"
+      name="noteText"
+      id="noteText"
+      placeholder="Enter Note Text"
+      [ngModel]="model.text"
+      (ngModelChange)="model.text = $event"
+      rows="15"
+      class="form-control"
+      required>
+    </textarea>
+  </div>
+
+  <input 
+    type="button" 
+    value="Save" 
+    class="btn btn-primary"
+    (click)="SaveNote()">
+</form>
